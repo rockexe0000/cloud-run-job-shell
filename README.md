@@ -113,6 +113,22 @@ gcloud run jobs execute ${JOB_NAME} --region=${GCP_REGION} --wait
 
 
 
+### Environment variables for jobs
+For Cloud Run jobs, the following environment variables are set:
+
+
+ **Name**               | **Description**                                                                                                      | **Example**     
+------------------------|----------------------------------------------------------------------------------------------------------------------|-----------------
+ CLOUD_RUN_JOB          | The name of the Cloud Run job being run.                                                                             | hello-world     
+ CLOUD_RUN_EXECUTION    | The name of the Cloud Run execution being run.                                                                       | hello-world-abc 
+ CLOUD_RUN_TASK_INDEX   | The index of this task. Starts at 0 for the first task and increments by 1 for every successive task, up to the maximum number of tasks minus 1. If you set --parallelism to greater than 1, tasks might not follow the index order. For example, it would be possible for task 2 to start before task 1. | 0               
+ CLOUD_RUN_TASK_ATTEMPT | The number of times this task has been retried. Starts at 0 for the first attempt and increments by 1 for every successive retry, up to the maximum retries value.                                                                                                                                        | 0               
+ CLOUD_RUN_TASK_COUNT   | The number of tasks defined in the --tasks parameter.                                                                | 1               
+
+
+
+
+
 
 
 
