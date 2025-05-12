@@ -32,14 +32,14 @@
 ```
 JOB_NAME="job-quickstart"
 GCP_REGION="asia-east1"
-GCP_PROJECT_ID="sy-living-dev"
-GCP_CONTAINER_REPO="livinglife-image-repo"
+GCP_PROJECT_ID="${GCP_PROJECT_ID}"
+GCP_CONTAINER_REPO="${GCP_CONTAINER_REPO}"
 IMAGE_URL="${GCP_REGION}-docker.pkg.dev/${GCP_PROJECT_ID}/${GCP_CONTAINER_REPO}/${JOB_NAME}"
 
-NETWORK="livinglife-vpc"
-SUBNET="livinglife-subnet"
-SERVICE_ACCOUNT="api-local-env@sy-living-dev.iam.gserviceaccount.com"
-GCP_KEY_FILE="/Users/s462763/github/yowoo/assets/key/sy-living-dev-local-server-cicd-pipeline.json"
+NETWORK="${VPC_NETWORK}"
+SUBNET="${VPC_SUBNET}"
+SERVICE_ACCOUNT="${SERVICE_ACCOUNT_NAME}@${GCP_PROJECT_ID}.iam.gserviceaccount.com"
+GCP_KEY_FILE="${GCP_KEY_FILE_PATH}"
 ```
 
 ### build docker image
